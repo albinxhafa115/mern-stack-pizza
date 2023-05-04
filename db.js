@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-var mongoURL = 'mongodb+srv://albin115:albin@cluster0.fuvhjkp.mongodb.net/mern-pizza'
 // mongoose.set('strictQuery',false);
 
 mongoose.connect(mongoURL, { useUnifiedTopology: true, useNewUrlParser: true })
