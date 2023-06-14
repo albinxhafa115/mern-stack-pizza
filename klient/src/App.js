@@ -10,11 +10,12 @@ import Cartscreen from './screens/Cartscreen';
 import Registerscreen from './screens/Registerscreen';
 import Loginscreen from './screens/Loginscreen';
 import Ordersscreen from './screens/Ordersscreen';
-
-
-
-
+import Adminscreen from './screens/Adminscreen';
+import Userslist from './screens/Userslist';
+import Pizzaslist from './screens/Pizzaslist';
+import Addpizza from './screens/Addpizza';
 import Orderslist from './screens/Orderslist';
+import Editpizza from './screens/Editpizza';
 
 
 function App() {
@@ -30,8 +31,14 @@ function App() {
           <Route path="/register" element={<Registerscreen />}></Route>
           <Route path="/login" element={<Loginscreen />}></Route>
           <Route path="/orders" element={<Ordersscreen />}></Route>
-          <Route path='/admin/orderslist' element={<Orderslist />} />
+          <Route path="/admin/*" element={<Adminscreen />}></Route>
 
+
+          <Route path='/admin/userslist' element={<Userslist />} />
+          <Route path='/admin/pizzaslist' element={<Pizzaslist />} />
+          <Route path='/admin/addpizza' element={<Addpizza />} />
+          <Route path='/admin/orderslist' element={<Orderslist />} />
+          <Route path='/admin/editpizza/:pizzaid' element={<Editpizza />} />
 
         </Routes>
       </BrowserRouter>
