@@ -16,6 +16,8 @@ import Pizzaslist from './screens/Pizzaslist';
 import Addpizza from './screens/Addpizza';
 import Orderslist from './screens/Orderslist';
 import Editpizza from './screens/Editpizza';
+import Footer from './components/Footer';
+
 
 
 function App() {
@@ -41,6 +43,7 @@ function App() {
           <Route path='/admin/editpizza/:pizzaid' element={<Editpizza />} />
 
         </Routes>
+        <Footer />
       </BrowserRouter>
 
     </div>
