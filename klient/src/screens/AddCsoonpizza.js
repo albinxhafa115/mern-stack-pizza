@@ -71,7 +71,7 @@ export default function AddCsoonpizza() {
 
                 {loading && (<Loading />)}
                 {error && (<Error error='Something went wrong' />)}
-                {success && (<Success success='New class added successfully' />)}
+                {success && (<Success success='New cooming soon Pizza added successfully' />)}
 
                 <form onSubmit={formHandler}>
                     <input className='form-control' type="text" placeholder='idpizza' value={idpizza} onChange={(e) => { setidpizza(e.target.value) }} />

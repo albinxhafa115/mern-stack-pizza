@@ -56,7 +56,7 @@ function App() {
 
 
           <Route path='/admin/userslist' element={<Userslist />} />
-          <Route path='/admin/edituser/:useriid' element={<EditUser />} />
+          <Route path='/admin/edituser/:userid' element={<EditUser />} />
           <Route path='/admin/pizzaslist' element={<Pizzaslist />} />
           <Route path='/admin/addpizza' element={<Addpizza />} />
           <Route path='/admin/orderslist' element={<Orderslist />} />

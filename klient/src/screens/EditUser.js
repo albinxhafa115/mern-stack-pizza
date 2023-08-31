@@ -9,7 +9,7 @@ import Success from '../components/Success'
 
 export default function EditUser() {
     const userstate = useSelector((state) => state.loginUserReducer);
-    const { currentUser } = userstate;
+    const { currentUser } = userstate; 
     const { userid } = useParams();
     const dispatch = useDispatch()
     const [name, setname] = useState('')
@@ -19,7 +19,7 @@ export default function EditUser() {
 
 
     const getusersbyidstate = useSelector((state) => state.getUserByIdReducer);
-    const { users, error, loading } = getusersbyidstate
+    const { useri, error, loading } = getusersbyidstate
     const editusersstate = useSelector((state) => state.editUserReducer)
     const { editloading, editerror, editsuccess } = editusersstate;
  
@@ -27,13 +27,13 @@ export default function EditUser() {
     useEffect(() => {
         if (!currentUser.isAdmin) {
             window.location.href = '/'
-        } if (users) {
-            if (users._id == userid) {
+        } if (useri) {
+            if (useri._id == userid) {
          
-                setname(users.name)
-                setemail(users.email)
-                setpassword(users.password)
-                setisAdmin(users.isAdmin)
+                setname(useri.name)
+                setemail(useri.email)
+                setpassword(useri.password)
+                setisAdmin(useri.isAdmin)
             }
             else {
                 dispatch(getUserById(userid))
@@ -42,7 +42,7 @@ export default function EditUser() {
         else {
             dispatch(getUserById(userid))
         }
-    }, [users, dispatch])
+    }, [useri, dispatch])
 
     function formHandler(e) {
         e.preventDefault();

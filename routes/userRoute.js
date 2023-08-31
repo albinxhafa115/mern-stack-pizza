@@ -78,15 +78,15 @@ router.post('/deleteuser', async (req, res) => {
 router.post("/edituser", async (req, res) => {
     const editeduser = req.body.editeduser
     try {
-        const user = await User.findOne({ _id: editeduser._id })
+        const useri = await User.findOne({ _id: editeduser._id })
 
-        user.name = editeduser.name,
-        user.email = editeduser.email,
-        user.password = editeduser.password,
-        user.isAdmin = editeduser.isAdmin
+        useri.name = editeduser.name,
+        useri.email = editeduser.email,
+        useri.password = editeduser.password,
+        useri.isAdmin = editeduser.isAdmin
        
 
-        await user.save()
+        await useri.save()
         res.send('User details edited succesfully')
 
     } catch (error) {
@@ -99,12 +99,12 @@ router.post("/edituser", async (req, res) => {
 
 //get prof by id
 router.post("/getuserbyid", async (req, res) => {
-    const useriid = req.body.userid
+    const userid = req.body.userid
 
 
     try {
-        const user = await User.findOne({ _id: useriid })
-        res.send(user)
+        const useri = await User.findOne({ _id: userid })
+        res.send(useri)
     } catch (error) {
         return res.status(400).json({ message: error })
 

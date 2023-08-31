@@ -66,6 +66,9 @@ export default function Userslist() {
                     })}
                 </tbody>
             </table>
+            <Link to="/register" className="btn btn-primary add-button">
+                Add New User
+            </Link>
         </div>
     )
 }

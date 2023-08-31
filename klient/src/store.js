@@ -5,7 +5,7 @@ import { getAllPizzasReducer, editPizzaReducer, getPizzaByIdReducer, addPizzaRed
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { cartReducer } from './reducers/cartReducer'
-import { getAllUsersReducer, loginUserReducer, registerUserReducer } from './reducers/userReducer'
+import { getAllUsersReducer, loginUserReducer, registerUserReducer,editUserReducer,getUserByIdReducer } from './reducers/userReducer'
 import { placeOrderReducer, getUserOrderReducer, getAllOrdersReducer } from './reducers/orderReducer'
 import { getAllOffersReducer, addOfferReducer, getOfferByIdReducer, editOfferReducer} from './reducers/offerReducer'
 import {getAllCsoonpizzasReducer, addCsoonpizzaReducer,getCsoonpizzaByIdReducer,editCsoonpizzaReducer} from './reducers/csoonpizzaReducer'
@@ -21,6 +21,8 @@ const finalReducer = combineReducers({
     editPizzaReducer: editPizzaReducer,
     getAllOrdersReducer: getAllOrdersReducer,
     getAllUsersReducer: getAllUsersReducer,
+    editUserReducer: editUserReducer,
+    getUserByIdReducer: getUserByIdReducer,
     getAllOffersReducer: getAllOffersReducer,
     addOfferReducer :addOfferReducer,
     getOfferByIdReducer: getOfferByIdReducer,

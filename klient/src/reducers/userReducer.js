@@ -10,7 +10,7 @@ export const registerUserReducer = (state = {}, action) => {
             success: true
         }
         case 'USER_REGISTER_FAILED': return {
-            loading: false,
+            loading: false, 
             error: action.payload
         }
         default: return state
@@ -90,7 +90,7 @@ export const getUserByIdReducer = (state = {}, action) => {
         case 'GET_USERBYID_SUCCESS':
             return {
                 loading: false,
-                users: action.payload // Change 'useri' to 'users' here
+                useri: action.payload // Change 'useri' to 'users' here
             };
         case 'GET_USERBYID_FAILED':
             return {
