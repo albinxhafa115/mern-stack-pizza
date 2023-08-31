@@ -1,7 +1,7 @@
 // CsoonpizzasScreen.js
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllCsoonpizzas } from '../actions/csoonpizzaActions';
+import { getAllCsoonpizzas,deleteCsoonpizza } from '../actions/csoonpizzaActions';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 import { Link } from 'react-router-dom';
@@ -47,6 +47,7 @@ export default function CsoonpizzasScreen() {
                         <th>Id</th>
                         <th>Name</th>
                         <th>Type</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,6 +56,9 @@ export default function CsoonpizzasScreen() {
                             <td>{csoonpizza.idpizza}</td>
                             <td>{csoonpizza.name}</td>
                             <td>{csoonpizza.type}</td>
+                            <td>
+                                <i className='fa fa-trash m-1' onClick={() => (dispatch(deleteCsoonpizza(csoonpizza._id)))}></i>
+                                <Link to={`/admin/editcsoonpizza/${csoonpizza._id}`}><i className='fa fa-edit m-1'></i></Link> </td>
                         </tr>
                     ))}
                 </tbody>

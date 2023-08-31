@@ -85,7 +85,7 @@ export default function EditCsoonpizza() {
 
                 {loading && (<Loading />)}
                 {error && (<Error error='Something went wrong' />)}
-                {editsuccess && (<Success success='Class details edited successffully' />)}
+                {editsuccess && (<Success success='Cooming soon pizza details edited successffully' />)}
                 {editloading && (<Loading />)}
 
                 <form onSubmit={formHandler}>

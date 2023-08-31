@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { logoutUser } from '../actions/userActions';
 
-import '/Users/PC/Desktop/Projects/mern-stack-pizza-test/klient/src/components/navbar.css';
+import '/Users/PC/Desktop/Projects/mern-stack-pizza/klient/src/components/navbar.css';
 
 export default function Navbar() {
   const cartstate = useSelector(state => state.cartReducer);
