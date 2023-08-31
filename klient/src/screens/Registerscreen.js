@@ -40,7 +40,7 @@ export default function Registerscreen() {
 
 
 
-                    <h2 className='text-center m-5' style={{ fontsize: '35px' }}>Register</h2>
+                    <h2 id='registertext' className='text-center m-5' style={{ fontsize: '35px' }}>Register</h2>
                     <div>
 
                         <input required type="text" placeholder='name' className='form-control' value={name}

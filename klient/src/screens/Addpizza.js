@@ -9,7 +9,7 @@ import Success from '../components/Success'
 
 export default function Addpizza() {
     const [name, setname] = useState('')
-
+  
     const [smallprice, setsmallprice] = useState('')
 
     const [mediumprice, setmediumprice] = useState('')
@@ -68,6 +68,10 @@ export default function Addpizza() {
                             <li><Link to={'/admin/pizzaslist'}>Pizzas List</Link></li>
                             <li><Link to={'/admin/addpizza'}>Add New Pizza</Link></li>
                             <li><Link to={'/admin/orderslist'}>Orders List</Link></li>
+                            <li><Link to={'/admin/offerslist'}>Offers List</Link></li>
+                            <li><Link to={'/admin/addoffer'}>Add New Offer</Link></li>
+                            <li><Link to={'/admin/csoonpizzaslist'}>Cooming soon Pizza List</Link></li>
+                            <li><Link to={'/admin/addcsoonpizza'}>Add New Cooming soon Pizza</Link></li>
                         </ul>
 
 

@@ -60,3 +60,34 @@ export const deleteUser = (userid) => async dispatch => {
 
     }
 }
+//edit USER
+
+export const editUser = (editeduser) => async dispatch => {
+
+    dispatch({ type: 'EDIT_USER_REQUEST' })
+    try {
+        const response = await axios.post('/api/users/edituser', { editeduser })
+        console.log(response)
+        dispatch({ type: 'EDIT_USER_SUCCESS' })
+        window.location.href = '/admin/userslist'
+    } catch (error) {
+        dispatch({ type: 'EDIT_USER_FAILED', payload: error })
+    }
+
+}
+
+
+
+// get class by id
+// userActions.js
+export const getUserById = (userid) => async (dispatch) => {
+    dispatch({ type: 'GET_USERBYID_REQUEST' });
+
+    try {
+        const response = await axios.post('/api/users/getuserbyid', { userid });
+        console.log(response); // Add this line
+        dispatch({ type: 'GET_USERBYID_SUCCESS', payload: response.data });
+    } catch (error) {
+        dispatch({ type: 'GET_USERBYID_FAILED', payload: error });
+    }
+};

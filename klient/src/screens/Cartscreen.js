@@ -16,18 +16,18 @@ export default function Cartscreen() {
             <div className='row justify-content-center p-2' data-aos='fade-down'>
 
                 <div className='col-md-6'>
-                    <h2 style={{ fontsize: '40px' }}>My Cart</h2>
+                    <h2 style={{ fontsize: '40px', color:'black!important' }}>My Cart</h2>
 
                     {cartItems.map(item => {
                         return <div className='flex-container'>
 
-                            <div className="text-left m-3 w-100">
-                                <h1>{item.name}[{item.varient}]</h1>
-                                <h1>Price : {item.quantity} * {item.prices[0][item.varient]} = {item.price}</h1>
-                                <h1 style={{ display: 'inline' }}>Quanity : </h1>
-                                <i className="fa-solid fa-plus" aria-hidden="true" onClick={() => { dispatch(addToCart(item, item.quantity + 1, item.varient)) }}></i>
-                                <b>{item.quantity}</b>
-                                <i className="fa-solid fa-minus" onClick={() => { dispatch(addToCart(item, item.quantity - 1, item.varient)) }}></i>
+                            <div className="text-left m-3 w-100 ">
+                                <h1 id='carttext'>{item.name}[{item.varient}]</h1>
+                                <h1  id='carttext'>Price : {item.quantity} * {item.prices[0][item.varient]} = {item.price}</h1>
+                                <h1  id='carttext' style={{ display: 'inline' }}>Quanity : </h1>
+                                <i  id='carttext' className="fa-solid fa-plus" aria-hidden="true" onClick={() => { dispatch(addToCart(item, item.quantity + 1, item.varient)) }}></i>
+                                <b  id='carttext'>{item.quantity}</b>
+                                <i  id='carttext' className="fa-solid fa-minus" onClick={() => { dispatch(addToCart(item, item.quantity - 1, item.varient)) }}></i>
                             </div>
 
                             <div className='m-1 w-100'>

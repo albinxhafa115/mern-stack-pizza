@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'
 
 
 
+
 export default function Pizzaslist() {
     const dispatch = useDispatch();
 
@@ -20,7 +21,7 @@ export default function Pizzaslist() {
     }, []);
 
     return (
-        <div>
+        <div  className="row justify-content-center">
             <div>
                 <div className='row justify-content-center'>
                     <div className='col-md-10'>
@@ -30,6 +31,10 @@ export default function Pizzaslist() {
                             <li><Link to={'/admin/pizzaslist'}>Pizzas List</Link></li>
                             <li><Link to={'/admin/addpizza'}>Add New Pizza</Link></li>
                             <li><Link to={'/admin/orderslist'}>Orders List</Link></li>
+                            <li><Link to={'/admin/profslist'}>Offers List</Link></li>
+                            <li><Link to={'/admin/addoffer'}>Add New Offer</Link></li>
+                            <li><Link to={'/admin/csoonpizzaslist'}>Cooming soon Pizza List</Link></li>
+                            <li><Link to={'/admin/addcsoonpizza'}>Add New Cooming soon Pizza</Link></li>
                         </ul>
                     </div>
                 </div>
@@ -39,7 +44,7 @@ export default function Pizzaslist() {
             {loading && (<Loading />)}
             {error && (<Error error='Something went wrong' />)}
 
-            <table className='table table-bordered'>
+            <table className='table table-bordered mt-4 csoonpizzas-table'>
                 <thead className='thead'>
                     <tr>
                         <th>Name</th>
@@ -66,7 +71,9 @@ export default function Pizzaslist() {
 
                     })}</tbody>
             </table>
-
+            <Link to="/admin/addpizza" className="btn btn-primary add-button">
+                Add New Pizza
+            </Link>
         </div>
     )
 }

@@ -6,6 +6,7 @@ import Loading from '../components/Loading';
 import Pizza from '../components/Pizza'
 import Error from '../components/Error';
 import { deliverOrder, getAllOrders } from '../actions/orderActions';
+
 export default function Orderslist() {
     const userstate = useSelector((state) => state.loginUserReducer);
     const { currentUser } = userstate;
@@ -21,7 +22,7 @@ export default function Orderslist() {
 
     }, [])
     return (
-        <div>
+        <div  className="row justify-content-center">
             <div>
                 <div className='row justify-content-center'>
                     <div className='col-md-10'>
@@ -31,6 +32,10 @@ export default function Orderslist() {
                             <li><Link to={'/admin/pizzaslist'}>Pizzas List</Link></li>
                             <li><Link to={'/admin/addpizza'}>Add New Pizza</Link></li>
                             <li><Link to={'/admin/orderslist'}>Orders List</Link></li>
+                            <li><Link to={'/admin/offerslist'}>Offers List</Link></li>
+                            <li><Link to={'/admin/addoffer'}>Add New Offer</Link></li>
+                            <li><Link to={'/admin/csoonpizzaslist'}>Cooming soon Pizza List</Link></li>
+                            <li><Link to={'/admin/addcsoonpizza'}>Add New Cooming soon Pizza</Link></li>
                         </ul>
 
 
@@ -41,8 +46,8 @@ export default function Orderslist() {
             {loading && (<Loading />)}
             {error && (<Error error='Something went wrong' />)}
 
-            <table className='table table-striped table-bordered'>
-                <thead>
+            <table className='table table-bordered mt-4 csoonpizzas-table'>
+            <thead className='thead-dark'>
                     <tr>
                         <th>Order id </th>
                         <th>Email</th>

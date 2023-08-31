@@ -30,7 +30,7 @@ export default function Loginscreen() {
         <div>
             <div className='row justify-content-center mt-5'>
                 <div className='col-md-5 mt-5 text-left shadow-lg p-3 mb-5 bg-white rounded'>
-                    <h2 className='text-center m-5' style={{ fontsize: '35px' }}>Login</h2>
+                    <h2  id='logintext' className='text-center m-5' style={{ fontsize: '35px' }}>Login</h2>
 
                     {loading && (<Loading />)}
                     {error && (<Error error='Invalid Credentials' />)}

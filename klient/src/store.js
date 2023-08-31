@@ -7,7 +7,8 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { cartReducer } from './reducers/cartReducer'
 import { getAllUsersReducer, loginUserReducer, registerUserReducer } from './reducers/userReducer'
 import { placeOrderReducer, getUserOrderReducer, getAllOrdersReducer } from './reducers/orderReducer'
-
+import { getAllOffersReducer, addOfferReducer, getOfferByIdReducer, editOfferReducer} from './reducers/offerReducer'
+import {getAllCsoonpizzasReducer, addCsoonpizzaReducer,getCsoonpizzaByIdReducer,editCsoonpizzaReducer} from './reducers/csoonpizzaReducer'
 const finalReducer = combineReducers({
     getAllPizzasReducer: getAllPizzasReducer,
     cartReducer: cartReducer,
@@ -19,7 +20,15 @@ const finalReducer = combineReducers({
     getPizzaByIdReducer: getPizzaByIdReducer,
     editPizzaReducer: editPizzaReducer,
     getAllOrdersReducer: getAllOrdersReducer,
-    getAllUsersReducer: getAllUsersReducer
+    getAllUsersReducer: getAllUsersReducer,
+    getAllOffersReducer: getAllOffersReducer,
+    addOfferReducer :addOfferReducer,
+    getOfferByIdReducer: getOfferByIdReducer,
+    editOfferReducer: editOfferReducer,
+    editCsoonpizzaReducer: editCsoonpizzaReducer,
+    getCsoonpizzaByIdReducer: getCsoonpizzaByIdReducer,
+    addCsoonpizzaReducer: addCsoonpizzaReducer,
+    getAllCsoonpizzasReducer: getAllCsoonpizzasReducer
 })
 const cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []
 

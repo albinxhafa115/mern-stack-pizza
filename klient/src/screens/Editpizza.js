@@ -5,7 +5,8 @@ import { editPizza, getPizzaById } from '../actions/pizzaActions';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 import Success from '../components/Success'
-    ;
+
+
 
 export default function Editpizza() {
     const userstate = useSelector((state) => state.loginUserReducer);
@@ -74,7 +75,7 @@ export default function Editpizza() {
     }
 
     return (
-        <div>
+        <div  className="container csoonpizzas-screen">
             <div>
                 <div className='row justify-content-center'>
                     <div className='col-md-10'>
@@ -84,6 +85,10 @@ export default function Editpizza() {
                             <li><Link to={'/admin/pizzaslist'}>Pizzas List</Link></li>
                             <li><Link to={'/admin/addpizza'}>Add New Pizza</Link></li>
                             <li><Link to={'/admin/orderslist'}>Orders List</Link></li>
+                            <li><Link to={'/admin/offerslist'}>Offers List</Link></li>
+                            <li><Link to={'/admin/addoffer'}>Add New Offer</Link></li>
+                            <li><Link to={'/admin/csoonpizzaslist'}>Cooming soon Pizza List</Link></li>
+                            <li><Link to={'/admin/addcsoonpizza'}>Add New Cooming soon Pizza</Link></li>
                         </ul>
 
 
