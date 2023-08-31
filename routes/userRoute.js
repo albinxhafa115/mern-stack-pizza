@@ -72,4 +72,42 @@ router.post('/deleteuser', async (req, res) => {
     }
 });
 
+
+
+//edit user 
+router.post("/edituser", async (req, res) => {
+    const editeduser = req.body.editeduser
+    try {
+        const user = await User.findOne({ _id: editeduser._id })
+
+        user.name = editeduser.name,
+        user.email = editeduser.email,
+        user.password = editeduser.password,
+        user.isAdmin = editeduser.isAdmin
+       
+
+        await user.save()
+        res.send('User details edited succesfully')
+
+    } catch (error) {
+        return res.status(400).json({ message: error })
+
+    }
+})
+
+
+
+//get prof by id
+router.post("/getuserbyid", async (req, res) => {
+    const useriid = req.body.userid
+
+
+    try {
+        const user = await User.findOne({ _id: useriid })
+        res.send(user)
+    } catch (error) {
+        return res.status(400).json({ message: error })
+
+    }
+})
 module.exports = router;

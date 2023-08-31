@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const pizzaSchema = mongoose.Schema({
+const pizzaSchema = mongoose.Schema({ 
 
     name: { type: String, require },
     varients: [],
